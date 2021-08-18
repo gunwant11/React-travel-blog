@@ -1,0 +1,10 @@
+div{
+    .grid-container{
+        position: relative;
+        max-width:700px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        left: 10%;
+
+    }
+}
