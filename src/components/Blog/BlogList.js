@@ -1,13 +1,15 @@
 import { Fragment } from "react";
-import BlogItem from "./BlogItem";
-
+import BlogDisplay from "./BlogDisplay";
+import classes from './BlogList.module.scss'
 
 const BlogList = (props) => {
+  var result = Object.values(props.blogs)
+
   return (
     <Fragment>
-      <div >
-        {props.blogs.map((data) => (
-          <BlogItem
+      <div className={classes.grid_container}>
+        {result.map((data) => (
+          <BlogDisplay
             key={data.id}
             id={data.id}
             title={data.title}

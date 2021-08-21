@@ -1,0 +1,25 @@
+div{
+    .container{
+        margin: 0.8rem;
+        width: 400px;
+        height: auto;
+    }
+    
+    .img{
+        
+        img{
+            width: 100%;
+            height: 300px;
+            border-radius: 10px 10px 0  0;
+
+        }
+    }
+    .img-text{
+        background-color: lightblue;
+        padding: 1rem;
+        font-size: 18px;
+        border-radius: 0  0 10px 10px;
+
+    }
+}
+

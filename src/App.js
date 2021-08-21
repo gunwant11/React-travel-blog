@@ -2,53 +2,61 @@ import classes from "./App.module.scss";
 import Head from "./components/layout/Head";
 import Author from "./components/Blog/Author";
 import BlogList from "./components/Blog/BlogList";
-import BlogPage from "./components/Blog/BlogPage";
-import img1 from "./assets/blogImgs/1.jpg";
-import img2 from "./assets/blogImgs/2.jpg";
-import img3 from "./assets/blogImgs/3.jpg";
+import { Redirect, Route, Switch } from "react-router-dom";
+import { Fragment, useState, useEffect } from "react";
+import BlogItem from "./components/Blog/BlogItem";
+import axios from "axios";
+import NotFound from "./components/layout/NotFound";
+import Landing from "./components/layout/Landing";
 
-const DUMMY_DATA = [
-  {
-    id: "b1",
-    image: img1,
-    title: "Max",
-    description: "Learning React is fun!",
-    date: '11/11',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: "b2",
-    image: img2,
-    title: "Max",
-    description: "Learning React is fun!",
-    date: '11/11',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-  {
-    id: "b3",
-    image: img3,
-    title: "Max",
-    description: "Learning React is fun!",
-    date: '11/11',
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-  },
-];
+
+const baseURL =
+  "https://react-travel-blog-234c6-default-rtdb.firebaseio.com/data.json";
 
 function App() {
+  const [post, setPost] = useState(null);
+
+  useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+  console.log(post)
+
+  if (!post) return null;
+
   return (
-    <div className="App">
-      <Head />
-      <div className={classes["grid-container"]}>
-        <Author />
-      </div>
-      <div className={classes["grid-container"]}>
-        <BlogList blogs={DUMMY_DATA} />
-      </div>
-      <BlogPage blogContent={DUMMY_DATA} />
-    </div>
+    <Fragment>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="home" />
+        </Route>
+        <Route path="/home" exact>
+          <Landing blogs={post}/>
+        </Route>
+        <Route
+          exact
+          path="/blog/:blogId"
+          render={(props) => {
+            let idPost = props.location.pathname.replace("/blog/", "");
+            var result = Object.values(post);
+            
+            if ( Number(idPost) <= result.length){
+              let filter;
+              filter = result.filter((post) => post.id === Number(idPost));
+              console.log(filter);
+              return <BlogItem post={filter[0]}/>;
+            }
+            else{
+              return <NotFound />
+            }
+          }}
+        />
+        <Route path="*">
+          <NotFound />
+        </Route>
+      </Switch>
+    </Fragment>
   );
 }
 

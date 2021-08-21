@@ -1,25 +1,32 @@
-div{
-    .container{
-        margin: 0.8rem;
-        width: 400px;
-        height: auto;
-    }
-    
-    .img{
-        
-        img{
-            width: 100%;
-            height: auto;
-            border-radius: 10px 10px 0  0;
+.bg{
+    height: 100%;
+    background-color: lightblue;
+    display: grid;
+    justify-content: center;
 
-        }
-    }
-    .img-text{
-        background-color: lightblue;
-        padding: 1rem;
-        font-size: 18px;
-        border-radius: 0  0 10px 10px;
-
-    }
 }
 
+.card {
+    margin: 10vh 0;
+    background-color: #fff;
+    width: 50vw;
+    border-radius: 15px;
+    height: auto;
+}
+
+.title {
+    font-size: 30px;
+    padding: 10px 20px ;
+}
+
+.img{
+    padding: 0 20px;
+    width: inherit;
+    height: auto;
+}
+
+.description, .content{
+    margin: 5px 20px;
+    padding: 1px 5px;
+    border-bottom: 1.5px solid rgb(161, 161, 161);
+}
