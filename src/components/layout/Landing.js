@@ -7,7 +7,7 @@ const Landing = (props) => {
   return (
     <Fragment>
       <Head />
-      <section>
+      <section className={classes.box}>
         <Author />
         <BlogList blogs={props.blogs} />
       </section>
