@@ -1,4 +1,5 @@
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import classes from "./BlogDisplay.module.scss";
 
 
@@ -14,7 +15,8 @@ const BlogDisplay = (props) => {
         <div className={classes["img-text"]}>
           <h3>{props.title}</h3>
           <div>{props.description}</div>
-          <button >Detail</button>
+          <Link to={`/blog/${props.id}`}><button>Detail</button></Link>
+          
         </div>
       </div>
     </Fragment>
