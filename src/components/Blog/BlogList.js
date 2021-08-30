@@ -7,7 +7,7 @@ const BlogList = (props) => {
 
   return (
     <Fragment>
-      <h1>Blog</h1>
+      <h1 className={classes.title}  id="blog" >Blog</h1>
       <div className={classes.grid_container} id="hash">
         {result.map((data) => (
           <BlogDisplay

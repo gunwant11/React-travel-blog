@@ -41,6 +41,11 @@ div.title-box {
   color: white;
   border-radius: 1px;
   font-size: 18px;
+  transition: 150ms ease-in;
 
+}
+
+.button:hover{
+  background-color: rgba(253, 249, 249, 0.219);
 }
 

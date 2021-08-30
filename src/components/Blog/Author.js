@@ -5,7 +5,7 @@ const Author = () => {
   return (
     <section className={classes.container}>
       <div>
-        <h1 >Authors Name</h1>
+        <h1 id="author" >Authors Name</h1>
         <div>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad

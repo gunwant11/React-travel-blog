@@ -4,25 +4,40 @@
   justify-content: center;
   align-items: center;
   padding: 40px 0;
+  width: 100%;
 }
 
 .box div {
     margin: 0 10px 0;
     background-color: rgb(80, 80, 80);
     border-radius: 4px;
+
 }
 
 .box p {
   height: 500px;
-  width: 350px;
+  width: 20vw;
   border-radius: 4px;
   margin-bottom: 0 !important ;
+
 }
 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1) bl;
+
     border-radius: 4px;
+}
+.text{
+  display: block;
+  position: absolute;
+  transform: translate( 10px, -40px);
+  color: white;
+  font-size: 25px;
+}
+
+.box p:hover{
+  transition: 2s ease-in;
+  mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1) ;
 }

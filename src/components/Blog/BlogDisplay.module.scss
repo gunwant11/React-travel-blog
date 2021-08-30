@@ -2,6 +2,7 @@ div{
     .container{
 
         min-width: 380px;
+        transition: 150ms ease-in;
     }
     
     .img{
@@ -22,8 +23,25 @@ div{
     }
 }
 .img-text button{
-    background-color: cadetblue;
-    border: 1px solid  ;
+    background-color: rgb(27, 99, 141);
+    color: white;
+    border: 1px solid black ;
     border-radius: 5px ;
     padding: 3px 25px;
+    transition: 150ms ease-in;
+}
+
+.img-text h3{
+    margin: 0;
+}
+
+.img-text div{
+    margin-bottom: 40px;
+}
+.img-text button:hover{
+    background-color: rgb(26, 77, 107);
+}
+
+.container:hover{
+    transform: translateY( -10px);
 }
