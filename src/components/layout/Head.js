@@ -17,14 +17,14 @@ const Head = () => {
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. 
         </div>
-        <a href="/"><Link
+        <Link
             activeClass={classes.activeClass}
             to="blog"
             spy={true}
             smooth={true}
             offset={-70}
             duration={550}
-          ><button className={classes.button}>View Blog </button></Link></a>
+          ><button className={classes.button}>View Blog </button></Link>
 
       </div>
       <CarouselContainer />
