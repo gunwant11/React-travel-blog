@@ -1,4 +1,3 @@
-
 import classes from "./Head.module.scss";
 import Navbar from "../UI/Navbar";
 import Link from "react-scroll/modules/components/Link";
