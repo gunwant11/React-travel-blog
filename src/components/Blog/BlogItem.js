@@ -1,6 +1,5 @@
 import classes from "./BlogItem.module.scss";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
 import back from "../../assets/backk.svg"
 
 const BlogItem = (props) => {
