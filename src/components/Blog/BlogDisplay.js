@@ -5,7 +5,7 @@ import classes from "./BlogDisplay.module.scss";
 
 const BlogDisplay = (props) => {
 
-  console.log(props.title)
+
   return (
     <Fragment>
       <div className={classes.container}>

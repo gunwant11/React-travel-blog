@@ -17,7 +17,7 @@ function App() {
       setPost(response.data);
     });
   }, []);
-  console.log(post);
+
 
   if (!post) return null;
 
@@ -40,7 +40,6 @@ function App() {
               if (Number(idPost) <= result.length) {
                 let filter;
                 filter = result.filter((post) => post.id === Number(idPost));
-                console.log(filter);
                 return <BlogItem post={filter[0]} />;
               } else {
                 return <NotFound />;
