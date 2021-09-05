@@ -20,12 +20,12 @@ const BlogItem = (props) => {
             onClick={clickHandler}
             src={back}
             width="50"
+            alt="home"
           />
         </div>
 
         <img className={classes.img} src={props.post.image} alt="#" />
 
-        <div className={classes.description}>{props.post.description}</div>
 
         <div className={classes.content}>{props.post.content}</div>
       </div>

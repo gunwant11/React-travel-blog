@@ -49,3 +49,11 @@ div.title-box {
   background-color: rgba(253, 249, 249, 0.219);
 }
 
+@media (max-width:1000px) {
+  div.title-box{
+    width: 100%;
+    left: 100vw;
+  }
+  
+}
+

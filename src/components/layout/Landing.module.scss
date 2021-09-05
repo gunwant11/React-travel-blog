@@ -2,3 +2,8 @@
     width: 70vw;
     margin: auto;
 }
+
+@media screen and (max-width: 450px) {
+   .box{ width: 90%;}
+    
+}

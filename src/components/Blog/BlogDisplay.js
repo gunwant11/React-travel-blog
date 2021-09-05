@@ -14,7 +14,6 @@ const BlogDisplay = (props) => {
         </div>
         <div className={classes["img-text"]}>
           <h3>{props.title}</h3>
-          <div>{props.description}</div>
           <Link to={`/blog/${props.id}`}><button>Read blog</button></Link>
           
         </div>
