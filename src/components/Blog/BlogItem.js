@@ -1,5 +1,8 @@
 import classes from "./BlogItem.module.scss";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import back from "../../assets/backk.svg"
+
 const BlogItem = (props) => {
 
   const history = useHistory();
@@ -16,7 +19,7 @@ const BlogItem = (props) => {
           <p>{props.post.title}</p>
           <img
             onClick={clickHandler}
-            src="http://getdrawings.com/free-icon/back-button-icon-53.png"
+            src={back}
             width="50"
           />
         </div>
